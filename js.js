@@ -9,14 +9,14 @@ let selectedFigure = '';
             let inputsHtml = '';
             let imageUrl = '';
 
-            if (figure === 'circle') {
+            if (figure === 'circulo') {
                 inputsHtml += `
                     <div class="input-group">
                         <label for="radius">Radio:</label>
                         <input type="number" id="radius" name="radius" placeholder="Ingresa el radio">
                     </div>`;
                 imageUrl = 'img/circulo.png'; // Ruta a la imagen del círculo local
-            } else if (figure === 'triangle') {
+            } else if (figure === 'triangulo') {
                 inputsHtml += `
                     <div class="input-group">
                         <label for="base">Base:</label>
@@ -27,7 +27,7 @@ let selectedFigure = '';
                         <input type="number" id="height" name="height" placeholder="Ingresa la altura">
                     </div>`;
                 imageUrl = 'img/triangulo.png'; // Ruta a la imagen del triángulo local
-            } else if (figure === 'square') {
+            } else if (figure === 'cuadrado') {
                 inputsHtml += `
                     <div class="input-group">
                         <label for="side">Lado:</label>
@@ -46,18 +46,18 @@ let selectedFigure = '';
 
         function calculateArea() {
             let area;
-            if (selectedFigure === 'circle') {
+            if (selectedFigure === 'circulo') {
                 const radius = document.getElementById('radius').value;
                 if (radius) {
                     area = Math.PI * Math.pow(radius, 2);
                 }
-            } else if (selectedFigure === 'triangle') {
+            } else if (selectedFigure === 'triangulo') {
                 const base = document.getElementById('base').value;
                 const height = document.getElementById('height').value;
                 if (base && height) {
                     area = 0.5 * base * height;
                 }
-            } else if (selectedFigure === 'square') {
+            } else if (selectedFigure === 'cuadrado') {
                 const side = document.getElementById('side').value;
                 if (side) {
                     area = Math.pow(side, 2);
